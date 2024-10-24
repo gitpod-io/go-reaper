@@ -78,7 +78,7 @@ func reapChildren(config Config) {
 			}
 
 			if config.OnReap != nil {
-				config.OnReap(pid, wstatus)
+				go config.OnReap(pid, wstatus)
 			}
 		}
 	}
